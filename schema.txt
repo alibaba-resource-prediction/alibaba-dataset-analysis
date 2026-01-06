@@ -1,0 +1,234 @@
+ALIBABA MICROSERVICES TRACES DATASET SCHEMA
+================================================================================
+Base path: /home/mpds/data/bronze
+
+Found 4 tables: MSMetrics, NodeMetrics, CallGraph, MSRTMCR
+
+================================================================================
+TABLE: CallGraph
+Path: /home/mpds/data/bronze/table=CallGraph
+================================================================================
+
+PARTITIONING:
+  Type: HivePartitioning
+  Partition columns:
+    - day: int32
+    - hour: int32
+
+DATA COLUMNS:
+  - timestamp: int64
+      (nullable)
+  - traceid: string
+      (nullable)
+  - service: string
+      (nullable)
+  - rpc_id: string
+      (nullable)
+  - rpctype: string
+      (nullable)
+  - um: string
+      (nullable)
+  - uminstanceid: string
+      (nullable)
+  - interface: string
+      (nullable)
+  - dm: string
+      (nullable)
+  - dminstanceid: string
+      (nullable)
+  - rt: double
+      (nullable)
+  - day: int32
+      (nullable)
+  - hour: int32
+      (nullable)
+
+FULL SCHEMA DETAILS:
+timestamp: int64
+traceid: string
+service: string
+rpc_id: string
+rpctype: string
+um: string
+uminstanceid: string
+interface: string
+dm: string
+dminstanceid: string
+rt: double
+day: int32
+hour: int32
+
+SAMPLE DATA (first row):
+   timestamp       traceid      service rpc_id rpctype        um      uminstanceid   interface       dm    dminstanceid   rt  day  hour
+0      47307  T_1972684339  S_100671182  0.1.1      mc  MS_26447  MS_26447_POD_149  O9cSalqhIp  MS_4354  MS_4354_POD_28  1.0    0     0
+
+================================================================================
+TABLE: MSMetrics
+Path: /home/mpds/data/bronze/table=MSMetrics
+================================================================================
+
+PARTITIONING:
+  Type: HivePartitioning
+  Partition columns:
+    - day: int32
+    - hour: int32
+
+DATA COLUMNS:
+  - timestamp: int64
+      (nullable)
+  - msname: string
+      (nullable)
+  - msinstanceid: string
+      (nullable)
+  - nodeid: string
+      (nullable)
+  - cpu_utilization: double
+      (nullable)
+  - memory_utilization: double
+      (nullable)
+  - day: int32
+      (nullable)
+  - hour: int32
+      (nullable)
+
+FULL SCHEMA DETAILS:
+timestamp: int64
+msname: string
+msinstanceid: string
+nodeid: string
+cpu_utilization: double
+memory_utilization: double
+day: int32
+hour: int32
+
+SAMPLE DATA (first row):
+   timestamp    msname    msinstanceid      nodeid  cpu_utilization  memory_utilization  day  hour
+0     840000  MS_16678  MS_16678_POD_1  NODE_25521         0.043875            0.598631    0     0
+
+================================================================================
+TABLE: MSRTMCR
+Path: /home/mpds/data/bronze/table=MSRTMCR
+================================================================================
+
+PARTITIONING:
+  Type: HivePartitioning
+  Partition columns:
+    - day: int32
+    - hour: int32
+
+DATA COLUMNS:
+  - timestamp: int64
+      (nullable)
+  - msname: string
+      (nullable)
+  - msinstanceid: string
+      (nullable)
+  - nodeid: string
+      (nullable)
+  - providerrpc_rt: double
+      (nullable)
+  - providerrpc_mcr: double
+      (nullable)
+  - consumerrpc_rt: double
+      (nullable)
+  - consumerrpc_mcr: double
+      (nullable)
+  - writemc_rt: double
+      (nullable)
+  - writemc_mcr: double
+      (nullable)
+  - readmc_rt: double
+      (nullable)
+  - readmc_mcr: double
+      (nullable)
+  - writedb_rt: double
+      (nullable)
+  - writedb_mcr: double
+      (nullable)
+  - readdb_rt: double
+      (nullable)
+  - readdb_mcr: double
+      (nullable)
+  - consumermq_rt: double
+      (nullable)
+  - consumermq_mcr: double
+      (nullable)
+  - providermq_rt: double
+      (nullable)
+  - providermq_mcr: double
+      (nullable)
+  - http_mcr: double
+      (nullable)
+  - http_rt: double
+      (nullable)
+  - day: int32
+      (nullable)
+  - hour: int32
+      (nullable)
+
+FULL SCHEMA DETAILS:
+timestamp: int64
+msname: string
+msinstanceid: string
+nodeid: string
+providerrpc_rt: double
+providerrpc_mcr: double
+consumerrpc_rt: double
+consumerrpc_mcr: double
+writemc_rt: double
+writemc_mcr: double
+readmc_rt: double
+readmc_mcr: double
+writedb_rt: double
+writedb_mcr: double
+readdb_rt: double
+readdb_mcr: double
+consumermq_rt: double
+consumermq_mcr: double
+providermq_rt: double
+providermq_mcr: double
+http_mcr: double
+http_rt: double
+day: int32
+hour: int32
+
+SAMPLE DATA (first row):
+   timestamp   msname       msinstanceid      nodeid  providerrpc_rt  providerrpc_mcr  consumerrpc_rt  consumerrpc_mcr  writemc_rt  writemc_mcr  readmc_rt  readmc_mcr  writedb_rt  writedb_mcr  readdb_rt  readdb_mcr  consumermq_rt  consumermq_mcr  providermq_rt  providermq_mcr  http_mcr    http_rt  day  hour
+0          0  MS_9723  MS_24544_POD_1199  NODE_11765             0.0              0.0             0.0              0.0         0.0          0.0        0.0         0.0         0.0          0.0        0.0         0.0            0.0             0.0            0.0             0.0  0.000009  46.361822    0     0
+
+================================================================================
+TABLE: NodeMetrics
+Path: /home/mpds/data/bronze/table=NodeMetrics
+================================================================================
+
+PARTITIONING:
+  Type: HivePartitioning
+  Partition columns:
+    - day: int32
+    - hour: int32
+
+DATA COLUMNS:
+  - timestamp: int64
+      (nullable)
+  - nodeid: string
+      (nullable)
+  - cpu_utilization: double
+      (nullable)
+  - memory_utilization: double
+      (nullable)
+  - day: int32
+      (nullable)
+  - hour: int32
+      (nullable)
+
+FULL SCHEMA DETAILS:
+timestamp: int64
+nodeid: string
+cpu_utilization: double
+memory_utilization: double
+day: int32
+hour: int32
+
+SAMPLE DATA (first row):
+   timestamp      nodeid  cpu_utilization  memory_utilization  day  hour
+0      60000  NODE_10740         0.242226            0.269411    0     0
