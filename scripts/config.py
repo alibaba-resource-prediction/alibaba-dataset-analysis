@@ -10,7 +10,7 @@ def setup_gpu_cluster():
         threads_per_worker=1,
         device_memory_limit="22GB",
         local_directory="/tmp/dask-cuda",
-        dashboard_address=":0",
+        dashboard_address=":42409",
     )
     cudf.set_option("io.parquet.low_memory", True)
     return cluster
@@ -21,6 +21,6 @@ def setup_cpu_cluster():
         memory_limit="auto",
         threads_per_worker=1,
         local_directory="/tmp/dask-cpu",
-        dashboard_address=":0",
+        dashboard_address=":42409",
     )
     return cluster
