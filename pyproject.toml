@@ -18,14 +18,6 @@ dependencies = [
   "dask-cuda>=25.12.0",
   "cudf-cu12>=24.12.0",
   "dask-cudf-cu12>=24.12.0",
+  "seaborn>=0.13.2",
+  "bokeh>=3.8.2",
 ]
-
-[build-system]
-requires = ["setuptools>=68.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.packages.find]
-where = ["src"]
