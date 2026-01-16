@@ -46,14 +46,14 @@ def setup_gpu_cluster():
 
 def setup_cpu_cluster():
     cluster = LocalCluster(
-        #n_workers=48,
-        #memory_limit="auto",
-        #threads_per_worker=1,
+        n_workers=48,
+        memory_limit="auto",
+        threads_per_worker=1,
 
         ## this config i used for msmetrics_coverage.py
-        n_workers=4,
-        threads_per_worker=2,
-        memory_limit="40GiB",
+        #n_workers=4,
+        #threads_per_worker=2,
+        #memory_limit="40GiB",
 
         local_directory="/tmp/dask-cpu",
         dashboard_address=":42409",
